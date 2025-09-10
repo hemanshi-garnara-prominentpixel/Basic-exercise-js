@@ -17,7 +17,7 @@ var compareBrackets = function () {
             result.push(bracket);
         else if ([")", "]", "}"].includes(bracket)) {
             var lastBracket = result.pop();
-            if (lastBracket !== undefined && brackets[lastBracket] !== bracket) {
+            if (lastBracket === undefined || brackets[lastBracket] !== bracket) {
                 outputSpan.textContent = "False";
                 outputSpan.style.color = "red";
                 return;
